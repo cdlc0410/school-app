@@ -2,6 +2,14 @@
   "name": "school-app",
   "version": "1.0.0",
   "description": "implementando logica de una escuela como practica de programacion",
+  "homepage": "https://github.com/cdlc0410/school-app#readme",
+  "bugs": {
+    "url": "https://github.com/cdlc0410/school-app/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cdlc0410/school-app.git"
+  },
   "license": "ISC",
   "author": "Lav",
   "type": "module",
