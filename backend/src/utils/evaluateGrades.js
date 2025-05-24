@@ -52,9 +52,5 @@ export function evaluateStudent(students) {
         }
         // Asigna el mensaje de calificación al estudiante.
         student.gradeMsg = gradeMsg;
-
-        // Muestra la información del estudiante y el mensaje de calificación en la consola.
-        showStudents(student);
-        console.log(gradeMsg + "\n----------------------");
     });
 }
