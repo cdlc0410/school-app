@@ -1,2 +1,2 @@
-# Modulos de Node
-/backend/node_modules
+# Ignora la carpeta node_modules
+node_modules
