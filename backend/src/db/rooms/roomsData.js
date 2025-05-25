@@ -1,14 +1,14 @@
 /**
  * @file Datos de las aulas (salas) de la escuela.
  * @description Este archivo contiene un array de objetos, donde cada objeto representa
- * un aula con su identificador único y su nombre.
+ * un aula con su nombre y su capacitdad.
  * @author Lav
  */
 
 /**
  * @typedef {object} Room
- * @property {number} id - Identificador único del aula.
  * @property {string} name - Nombre del aula (ej. "Languages", "Mathematics").
+ * @property {number} capacity - Identificador único del aula.
  */
 
 /**
@@ -17,16 +17,16 @@
  */
 const ROOMS = [
     {
-        "id": 1,
-        "name": "Languages"
+        "name": "Languages",
+        "capacity": 0
     },
     {
-        "id": 2,
-        "name": "Mathematics"
+        "name": "Mathematics",
+        "capacity": 0
     },
     {
-        "id": 3,
-        "name": "Sciences"
+        "name": "Sciences",
+        "capacity": 0
     }
 ]
 
