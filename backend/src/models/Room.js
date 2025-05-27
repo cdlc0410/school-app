@@ -1,6 +1,6 @@
 // backend/src/models/Room.js
 import mongoose from 'mongoose';
-import Student from './School'
+import Student from './School.js'
 
 // Definición del esquema para la Habitación/Aula
 const RoomSchema = new mongoose.Schema({
@@ -16,8 +16,8 @@ const RoomSchema = new mongoose.Schema({
         default: 0
     },
     students: [{
-        type: ObjectId,
-        ref: Student
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Student'
     }]
 }, {
     timestamps: true

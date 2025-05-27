@@ -2,14 +2,9 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
+
 // Importa tus controladores desde la nueva carpeta
-import {
-    getAllStudents,
-    getStudentById,
-    getSchoolStatus,
-    evaluateAllStudents,
-    getRoomMessages
-} from './src/controllers/studentController.js'; // Asegúrate de que la ruta sea correcta
+import indexRoutes from './src/routes/indexRoutes.js'
 
 // Carga las variables de entorno desde .env
 dotenv.config();
@@ -38,12 +33,10 @@ mongoose.connect(MONGODB_URI)
     });
 
 // --- Definición de Rutas API (sin cambios aquí, se mantienen iguales) ---
-app.get('/', (req, res) => {
-  res.send('<h1>¡Hola desde el servidor School Logic!</h1> <ul><b>APIs:</b><li><a href="./api/school-status">school-status</a></li><li><a href="./api/students">students</a></li></ul>');
-});
 
-app.get('/api/school-status', getSchoolStatus);
-app.get('/api/students/messages', getRoomMessages);
-app.post('/api/students/evaluate', evaluateAllStudents);
-app.get('/api/students', getAllStudents);
-app.get('/api/students/:id', getStudentById);
+app.use('/', indexRoutes);
+
+// Manejo de errores 404 (si ninguna ruta coincide)
+app.use((req, res, next) => {
+    res.status(404).send('<h1>404 Not Found</h1>');
+});
