@@ -3,8 +3,11 @@ import express from 'express';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 
-// Importa tus controladores desde la nueva carpeta
-import indexRoutes from './src/routes/indexRoutes.js'
+// Rutas
+import indexRoutes from './src/routes/indexRoutes.js';
+import studentsRoutes from './src/routes/studentsRoutes.js';
+import schoolRoutes from './src/routes/schoolRoutes.js';
+
 
 // Carga las variables de entorno desde .env
 dotenv.config();
@@ -33,6 +36,10 @@ mongoose.connect(MONGODB_URI)
     });
 
 // --- Definición de Rutas API (sin cambios aquí, se mantienen iguales) ---
+
+app.use('/api/school-status', schoolRoutes)
+
+app.use('/api/students', studentsRoutes)
 
 app.use('/', indexRoutes);
 
